@@ -40,7 +40,7 @@
     <!-- Background -->
     <item>
         <shape>
-            <solid android:color="@color/table_as" />
+            <solid android:color="@color/table_late" />
             <corners android:radius="5dp" />
         </shape>
     </item>
