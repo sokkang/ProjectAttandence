@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="2dp">
+
+    <LinearLayout
+        android:id="@+id/menu1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item_menu"
+        android:background="@drawable/s_item_menu"
+        android:onClick="doSelectItem1">
+
+        <LinearLayout
+            android:id="@+id/item_menu1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/item_select1"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/height_item_menu_select"
+                android:orientation="horizontal"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="15sp"
+                android:text="Attandence"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:id="@+id/menu2"
+        android:layout_below="@id/menu1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item_menu"
+        android:background="@drawable/s_item_menu"
+        android:onClick="doSelectItem2">
+
+        <LinearLayout
+            android:id="@+id/item_menu2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/item_select2"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/height_item_menu_select"
+                android:orientation="horizontal"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="15sp"
+                android:text="About"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:id="@+id/menu3"
+        android:layout_below="@id/menu2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item_menu"
+        android:background="@drawable/s_item_menu"
+        android:onClick="doSelectItem3">
+
+        <LinearLayout
+            android:id="@+id/item_menu3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/item_select3"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/height_item_menu_select"
+                android:orientation="horizontal"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="15sp"
+                android:text="Terms and Conditions"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:id="@+id/menu4"
+        android:layout_below="@id/menu3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item_menu"
+        android:background="@drawable/s_item_menu"
+        android:onClick="doSelectItem4">
+        <LinearLayout
+            android:id="@+id/item_menu4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/item_select4"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/height_item_menu_select"
+                android:orientation="horizontal">
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Feedback"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:paddingLeft="15sp"
+                android:textColor="@color/colorWhite"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:id="@+id/menu5"
+        android:layout_below="@id/menu4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item_menu"
+        android:background="@drawable/s_item_menu"
+        android:onClick="doSelectItem5">
+
+        <LinearLayout
+            android:id="@+id/item_menu5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/item_select5"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/height_item_menu_select"
+                android:orientation="horizontal"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="15sp"
+                android:text="Log Out"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version 1.0.0"
+            android:textSize="11sp"
+            android:paddingLeft="3dp"
+            android:textColor="@color/colorWhite"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

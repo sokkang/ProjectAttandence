@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Attandence</string>
+    <string name="appname">ប្រព័ន្ធគ្រប់គ្រង់ពត៍មាន</string>
+    <string name="changepassword"><u>Change Password</u></string>
+    <string name="forgetpassword"><u>Forgot Password?</u></string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="school_name">Institute ofTechnology of Cambodia</string>
+
+    <string name="log_out">Are you sure you want to log out?</string>
+</resources>

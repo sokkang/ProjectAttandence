@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorBlue</color>
+    <color name="colorPrimaryDark">#065993</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlue">#1B78B9</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorRed">#ed3939</color>
+    <color name="colorhint">#C2C2C2</color>
+    <color name="btnlogin">#0d69a9</color>
+    <color name="colorWasSelect">#065993</color>
+    <color name="colorlogout">#7d7d7d</color>
+    <color name="colorblack">#333333</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="table_line">#9daca8</color>
+    <color name="table_header">#eeeeee</color>
+    <color name="table_today">#84ccff</color>
+    <color name="table_as">#ffafaf</color>
+    <color name="table_late">#fbf19b</color>
+    <color name="table_pr">#92fcc8</color>
+    <color name="table_bg">#fffcfc</color>
+    <color name="text_color_b">#414141</color>
+    <color name="text_color_small">#868686</color>
+    <color name="border_F">#888cfc</color>
+    <color name="border_M">#545454</color>
+    <color name="tool_bar">#1b78b9</color>
+</resources>

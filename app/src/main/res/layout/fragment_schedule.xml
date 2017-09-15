@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/Gv_list"
+    android:numColumns="6"
+    android:scrollbars="none"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:layout_rowWeight="9"
+    android:layout_height="match_parent">
+
+
+</GridView>

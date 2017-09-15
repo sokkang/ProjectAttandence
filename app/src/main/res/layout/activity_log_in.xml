@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sekimsour.project_attandence.Log_In"
+    android:paddingLeft="13dp"
+    android:paddingRight="13dp"
+    android:paddingBottom="6dp"
+    android:background="@color/colorBlue">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
+
+        <EditText
+            android:id="@+id/username"
+            style="@style/singleLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_formLogin"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/s_formlogin"
+            android:hint="Username"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/colorhint"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/password"
+            style="@style/singleLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_formLogin"
+            android:layout_below="@+id/username"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/s_formlogin"
+            android:fontFamily="sans-serif"
+            android:hint="Password"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/colorhint"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/btnLogIn"
+            android:layout_below="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/s_btnlogin"
+            android:text="Log In"
+            android:textSize="16sp"
+            android:textColor="#a6c9e1"
+            android:onClick="doLogIn"/>
+        <TextView
+            android:layout_below="@id/btnLogIn"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgetpassword"
+            android:textSize="11dp"
+            android:textColor="#a6c9e1"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017"
+            android:textSize="9sp"
+            android:paddingRight="3dp"
+            android:textColor="@color/colorWhite"/>
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:src="@drawable/img_copyright"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ITC_GIC"
+            android:textSize="9sp"
+            android:paddingLeft="3dp"
+            android:textColor="@color/colorWhite"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/appname"
+        android:layout_marginBottom="65dp"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhite"/>
+</RelativeLayout>
