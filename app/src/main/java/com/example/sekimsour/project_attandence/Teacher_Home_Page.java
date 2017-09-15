@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -68,11 +69,30 @@ public class Teacher_Home_Page extends AppCompatActivity {
         for (int i=0 ; i<40;i++){
             Student student = new Student();
             student.setName("name"+i);
+            student.setStatus(i%3+1);
             list.add(student);
         }
         gridView = (GridView) findViewById(R.id.Gv_student);
         adapter = new ListStudentAdapter(list,this,1);
         gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (list.get(i).getStatus()) {
+                    case 1:
+                        list.get(i).setStatus(2);
+                        break;
+                    case 2:
+                        list.get(i).setStatus(3);
+                        break;
+                    case 3:
+                        list.get(i).setStatus(1);
+                        break;
+                }
+                adapter.notifyDataSetChanged();
+
+            }
+        });
     }
 
     public void doBack(View view) {

@@ -8,6 +8,15 @@ public class Student {
     private String name;
     private int img;
     private String id;
+    private int status;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public String getName() {
         return name;
