@@ -8,28 +8,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="1">
+        >
 
         <ImageView
             android:id="@+id/iv_pro"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:layout_weight="0.8"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/img_margin"
+            android:layout_weight="0.85"
             android:background="@drawable/s_bg_img"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/employee2" />
 
 
         <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:textColor="@color/text_color_b"
-                android:layout_weight="0.2"
-                android:layout_marginBottom="15dp"
                 android:text="TextView"
+                android:layout_weight="0.15"
                 android:gravity="center_horizontal"
                 android:textSize="22sp" />
 

@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         time8.setHeight((screenHeight-actionBarHeight-result)/9);
 
 
-        for(int k=0;k<4;k++){
+        for(int k=0;k<5;k++){
             list.clear();
             int num=0;
             for(int i=0;i<9;i++){
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
             // listFragment.add(new Fragment_Schedule(list));
-            listfragm.put(49+k,new Fragment_Schedule(list));
+            listfragm.put(48+k,new Fragment_Schedule(list));
 
 
         }
@@ -255,9 +255,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                        pageAdapter.notifyDataSetChanged();
 //                        pager.setCurrentItem(1);
                         listfragm.put(position-1,new Fragment_Schedule(list));
-                        listfragm.remove(position+2);
+
 
                     }
+                    listfragm.remove(position+2);
 
                 }else if (position>p){
                     for(int k=0;k<1;k++){

@@ -1,8 +1,27 @@
 package com.example.sekimsour.project_attandence.Model;
 
 public class Session{
-    String sub;
-    String room;
+    private String sub;
+    private String room;
+    private String sessionID;
+    private int status;
+
+
+    public String getSessionID() {
+        return sessionID;
+    }
+
+    public void setSessionID(String sessionID) {
+        this.sessionID = sessionID;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public String getSub() {
         return sub;
@@ -18,6 +37,9 @@ public class Session{
 
     public void setRoom(String room) {
         this.room = room;
+    }
+
+    public Session() {
     }
 
     public Session(String sub, String room) {

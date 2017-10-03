@@ -11,4 +11,5 @@
     <dimen name="height_toolbar">56dp</dimen>
     <dimen name="img_info">50dp</dimen>
     <dimen name="img_info_s">20dp</dimen>
+    <dimen name="img_margin">10dp</dimen>
 </resources>

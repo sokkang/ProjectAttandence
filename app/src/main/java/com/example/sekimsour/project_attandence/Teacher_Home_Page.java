@@ -108,6 +108,7 @@ public class Teacher_Home_Page extends AppCompatActivity {
             Log.d("11111", "changeView: "+a);
             gridView.setNumColumns(1);
             adapter.setColnum(1);
+            adapter.notifyDataSetChanged();
 
         }else {
             gridView.setNumColumns(3);

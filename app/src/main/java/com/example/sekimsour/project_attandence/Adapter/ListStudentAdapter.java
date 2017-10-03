@@ -3,6 +3,12 @@ package com.example.sekimsour.project_attandence.Adapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.text.style.ImageSpan;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +20,7 @@ import android.widget.TextView;
 import com.example.sekimsour.project_attandence.Model.Student;
 import com.example.sekimsour.project_attandence.R;
 
+import java.io.IOException;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -61,18 +68,19 @@ public class ListStudentAdapter extends BaseAdapter{
 
 
         }
-        int screenHeight = ((Activity) context).getWindowManager()
+        int screenWidth = ((Activity) context).getWindowManager()
                 .getDefaultDisplay().getWidth();
 //            view.setMinimumHeight(screenHeight/3);
 //            view.setMinimumWidth((int) ((screenHeight/3)*0.7));
 
-        Log.d("111111111111", "getViewh: "+view.getMeasuredHeightAndState());
+
 
         Student s =list.get(i);
         ImageView imageView = view.findViewById(R.id.iv_pro);
         ImageView imgInfo = view.findViewById(R.id.imageView2);
         TextView tvname = view.findViewById(R.id.tv_name);
         tvname.setText(s.getName());
+//        imageView.setImageResource(R.drawable.img_profile);
 
         switch (s.getStatus()) {
             case 1:
@@ -86,13 +94,24 @@ public class ListStudentAdapter extends BaseAdapter{
                 break;
         }
         if (colnum==1) {
-            view.setMinimumHeight((int) (screenHeight));
-            imageView.setMinimumHeight(screenHeight);
+            view.setMinimumHeight((int) (screenWidth));
+            imageView.setMinimumHeight(screenWidth+200);
+//            imageView.setImageResource(R.drawable.employee2);
+            Bitmap bMap = BitmapFactory.decodeResource(context.getResources(),R.drawable.employee);
+            float factor = screenWidth / (float) bMap.getHeight();
+            Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, (int) (bMap.getWidth()*factor), screenWidth, true);
+            imageView.setImageBitmap(bMapScaled);
             imgInfo.setMinimumHeight((int) view.getContext().getResources().getDimension(R.dimen.img_info));
             imgInfo.setMinimumWidth((int) view.getContext().getResources().getDimension(R.dimen.img_info));
         }else {
-            view.setMinimumHeight((int) ((screenHeight/3)));
-            imageView.setMinimumHeight(screenHeight/3);
+            view.setMinimumHeight((int) (screenWidth/3));
+            imageView.setMinimumHeight((screenWidth/3)+70);
+            Bitmap bMap = BitmapFactory.decodeResource(context.getResources(),R.drawable.employee);
+            float factor = (screenWidth/3) / (float) bMap.getHeight();
+
+            Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, (int) (bMap.getWidth()*factor), screenWidth/3, true);
+            imageView.setImageBitmap(bMapScaled);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
             imgInfo.setMinimumHeight((int) view.getContext().getResources().getDimension(R.dimen.img_info_s));
             imgInfo.setMinimumWidth((int) view.getContext().getResources().getDimension(R.dimen.img_info_s));
 
@@ -129,4 +148,5 @@ public class ListStudentAdapter extends BaseAdapter{
 
         return view;
     }
+
 }
