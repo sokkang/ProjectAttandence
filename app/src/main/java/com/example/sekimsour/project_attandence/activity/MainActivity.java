@@ -1,15 +1,11 @@
-package com.example.sekimsour.project_attandence;
+package com.example.sekimsour.project_attandence.activity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
-import android.text.Layout;
-import android.util.Log;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,16 +15,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sekimsour.project_attandence.Adapter.MyAdapter;
 import com.example.sekimsour.project_attandence.Adapter.MyPagerAdapter;
+import com.example.sekimsour.project_attandence.Fragment_Schedule;
+import com.example.sekimsour.project_attandence.Log_In;
 import com.example.sekimsour.project_attandence.Model.Session;
 import com.example.sekimsour.project_attandence.Model.TimeTable;
+import com.example.sekimsour.project_attandence.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -130,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 change_password.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this, ChangePassword.class);
+                        Intent intent = new Intent(MainActivity.this, MyAdapter.ChangePassword.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.change_activity, R.anim.change_activity);
                         finish();

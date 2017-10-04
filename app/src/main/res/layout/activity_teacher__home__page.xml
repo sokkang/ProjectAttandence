@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context="com.example.sekimsour.project_attandence.Teacher_Home_Page">
+    tools:context="com.example.sekimsour.project_attandence.activity.Teacher_Home_Page">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

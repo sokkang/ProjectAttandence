@@ -1,13 +1,14 @@
 package com.example.sekimsour.project_attandence;
 
-import android.view.View;
 import android.widget.LinearLayout;
+
+import com.example.sekimsour.project_attandence.activity.MainActivity;
 
 /**
  * Created by SE KIMSOUR on 07/09/2017.
  */
 
-public class ForSelectMenu extends MainActivity{
+public class ForSelectMenu extends MainActivity {
     public void setColorToMenu(int item){
         LinearLayout itemSelect1 = (LinearLayout) findViewById(R.id.item_menu1);
         LinearLayout itemSelect2 = (LinearLayout) findViewById(R.id.item_menu2);

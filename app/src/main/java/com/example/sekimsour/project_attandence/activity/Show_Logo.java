@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence;
+package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -9,6 +9,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.sekimsour.project_attandence.Log_In;
+import com.example.sekimsour.project_attandence.R;
 
 public class Show_Logo extends AppCompatActivity {
     TextView tv;

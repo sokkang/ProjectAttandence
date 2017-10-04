@@ -1,9 +1,11 @@
-package com.example.sekimsour.project_attandence;
+package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.sekimsour.project_attandence.R;
 
 public class Terms_and_Conditions extends AppCompatActivity {
 

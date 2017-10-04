@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence;
+package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -12,7 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sekimsour.project_attandence.Adapter.ListStudentAdapter;
+import com.example.sekimsour.project_attandence.Adapter.MyAdapter;
 import com.example.sekimsour.project_attandence.Model.Student;
+import com.example.sekimsour.project_attandence.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +58,7 @@ public class Teacher_Home_Page extends AppCompatActivity {
                 change_password.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Teacher_Home_Page.this, ChangePassword.class);
+                        Intent intent = new Intent(Teacher_Home_Page.this, MyAdapter.ChangePassword.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.change_activity, R.anim.change_activity);
                         finish();
