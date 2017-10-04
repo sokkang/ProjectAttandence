@@ -18,7 +18,7 @@ public class ListSchedule {
     public List<Session> getScheduleWeekly(){
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat dayFormat  = new SimpleDateFormat("ddd");
+        SimpleDateFormat dayFormat  = new SimpleDateFormat("EEE");
         List<Session> listSchedule = new ArrayList<>();
         int[] time = {7,8,9,10,1,2,3,4};
         int num=2;

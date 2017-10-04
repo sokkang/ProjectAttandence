@@ -97,17 +97,19 @@ public class ListStudentAdapter extends BaseAdapter{
             imageView.setImageBitmap(bMapScaled);
             imgInfo.setMinimumHeight((int) view.getContext().getResources().getDimension(R.dimen.img_info));
             imgInfo.setMinimumWidth((int) view.getContext().getResources().getDimension(R.dimen.img_info));
+            tvname.setTextSize( 25);
         }else {
             view.setMinimumHeight((int) (screenWidth/3));
-            imageView.setMinimumHeight((screenWidth/3)+70);
+            imageView.setMinimumHeight((screenWidth/3));
             Bitmap bMap = BitmapFactory.decodeResource(context.getResources(),R.drawable.employee);
             float factor = (screenWidth/3) / (float) bMap.getHeight();
 
             Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, (int) (bMap.getWidth()*factor), screenWidth/3, true);
             imageView.setImageBitmap(bMapScaled);
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
+//            imageView.setScaleType(ImageView.ScaleType.CENTER);
             imgInfo.setMinimumHeight((int) view.getContext().getResources().getDimension(R.dimen.img_info_s));
             imgInfo.setMinimumWidth((int) view.getContext().getResources().getDimension(R.dimen.img_info_s));
+            tvname.setTextSize( 15);
 
         }
 

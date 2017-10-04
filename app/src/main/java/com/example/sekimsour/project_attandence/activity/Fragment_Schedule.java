@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence;
+package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +10,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.sekimsour.project_attandence.R;
+import com.example.sekimsour.project_attandence.activity.Teacher_Home_Page;
 import com.example.sekimsour.project_attandence.adapter.MyAdapter;
 import com.example.sekimsour.project_attandence.model.Session;
 import com.example.sekimsour.project_attandence.model.TimeTable;
-import com.example.sekimsour.project_attandence.activity.Teacher_Home_Page;
 
 import java.util.ArrayList;
 import java.util.List;

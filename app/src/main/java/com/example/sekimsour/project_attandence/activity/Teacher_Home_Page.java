@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.example.sekimsour.project_attandence.adapter.ListStudentAdapter;
 import com.example.sekimsour.project_attandence.adapter.MyAdapter;
-import com.example.sekimsour.project_attandence.model.Student;
 import com.example.sekimsour.project_attandence.R;
+import com.example.sekimsour.project_attandence.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.sekimsour.project_attandence.Fragment_Schedule;
+import com.example.sekimsour.project_attandence.activity.Fragment_Schedule;
 
 import java.util.HashMap;
 import java.util.Map;

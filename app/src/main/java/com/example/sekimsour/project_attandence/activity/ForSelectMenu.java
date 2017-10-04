@@ -1,7 +1,8 @@
-package com.example.sekimsour.project_attandence;
+package com.example.sekimsour.project_attandence.activity;
 
 import android.widget.LinearLayout;
 
+import com.example.sekimsour.project_attandence.R;
 import com.example.sekimsour.project_attandence.activity.MainActivity;
 
 /**
