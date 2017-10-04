@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.example.sekimsour.project_attandence.Adapter.MyAdapter;
-import com.example.sekimsour.project_attandence.Model.Session;
-import com.example.sekimsour.project_attandence.Model.TimeTable;
+import com.example.sekimsour.project_attandence.adapter.MyAdapter;
+import com.example.sekimsour.project_attandence.model.Session;
+import com.example.sekimsour.project_attandence.model.TimeTable;
 import com.example.sekimsour.project_attandence.activity.Teacher_Home_Page;
 
 import java.util.ArrayList;

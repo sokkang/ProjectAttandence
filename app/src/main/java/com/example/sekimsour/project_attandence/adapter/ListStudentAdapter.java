@@ -1,15 +1,10 @@
-package com.example.sekimsour.project_attandence.Adapter;
+package com.example.sekimsour.project_attandence.adapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.text.style.ImageSpan;
-import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +12,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sekimsour.project_attandence.Model.Student;
+import com.example.sekimsour.project_attandence.model.Student;
 import com.example.sekimsour.project_attandence.R;
 
-import java.io.IOException;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;

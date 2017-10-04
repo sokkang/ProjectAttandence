@@ -11,9 +11,9 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sekimsour.project_attandence.Adapter.ListStudentAdapter;
-import com.example.sekimsour.project_attandence.Adapter.MyAdapter;
-import com.example.sekimsour.project_attandence.Model.Student;
+import com.example.sekimsour.project_attandence.adapter.ListStudentAdapter;
+import com.example.sekimsour.project_attandence.adapter.MyAdapter;
+import com.example.sekimsour.project_attandence.model.Student;
 import com.example.sekimsour.project_attandence.R;
 
 import java.util.ArrayList;

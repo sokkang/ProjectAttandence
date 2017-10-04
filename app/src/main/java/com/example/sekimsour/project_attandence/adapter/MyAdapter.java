@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence.Adapter;
+package com.example.sekimsour.project_attandence.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.sekimsour.project_attandence.activity.MainActivity;
-import com.example.sekimsour.project_attandence.Model.Session;
+import com.example.sekimsour.project_attandence.model.Session;
 import com.example.sekimsour.project_attandence.R;
 
 import java.util.List;

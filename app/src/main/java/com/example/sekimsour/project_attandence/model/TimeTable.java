@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence.Model;
+package com.example.sekimsour.project_attandence.model;
 
 import java.util.ArrayList;
 

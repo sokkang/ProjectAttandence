@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence.Model;
+package com.example.sekimsour.project_attandence.model;
 
 /**
  * Created by Sokkang on 9/12/2017.

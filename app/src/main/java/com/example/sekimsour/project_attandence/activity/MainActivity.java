@@ -21,12 +21,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sekimsour.project_attandence.Adapter.MyAdapter;
-import com.example.sekimsour.project_attandence.Adapter.MyPagerAdapter;
+import com.example.sekimsour.project_attandence.adapter.MyAdapter;
+import com.example.sekimsour.project_attandence.adapter.MyPagerAdapter;
 import com.example.sekimsour.project_attandence.Fragment_Schedule;
-import com.example.sekimsour.project_attandence.Log_In;
-import com.example.sekimsour.project_attandence.Model.Session;
-import com.example.sekimsour.project_attandence.Model.TimeTable;
+import com.example.sekimsour.project_attandence.model.Session;
+import com.example.sekimsour.project_attandence.model.TimeTable;
 import com.example.sekimsour.project_attandence.R;
 
 import java.util.ArrayList;

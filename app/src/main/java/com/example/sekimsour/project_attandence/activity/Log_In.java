@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence;
+package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.sekimsour.project_attandence.activity.MainActivity;
+import com.example.sekimsour.project_attandence.R;
 
 public class Log_In extends AppCompatActivity {
     Button login;

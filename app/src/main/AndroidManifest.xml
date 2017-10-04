@@ -26,8 +26,8 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".Log_In" />
-        <activity android:name=".Adapter.MyAdapter$ChangePassword" />
+        <activity android:name=".activity.Log_In" />
+        <activity android:name=".adapter.MyAdapter$ChangePassword" />
         <activity android:name=".activity.About" />
         <activity android:name=".activity.Terms_and_Conditions" />
         <activity android:name=".activity.Teacher_Home_Page">

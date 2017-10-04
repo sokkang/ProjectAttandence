@@ -1,4 +1,4 @@
-package com.example.sekimsour.project_attandence.Adapter;
+package com.example.sekimsour.project_attandence.adapter;
 
 
 import android.support.v4.app.Fragment;

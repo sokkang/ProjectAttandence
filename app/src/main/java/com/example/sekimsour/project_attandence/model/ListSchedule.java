@@ -1,13 +1,10 @@
-package com.example.sekimsour.project_attandence.Model;
+package com.example.sekimsour.project_attandence.model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import static android.R.attr.format;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 /**
  * Created by Sokkang on 9/27/2017.
