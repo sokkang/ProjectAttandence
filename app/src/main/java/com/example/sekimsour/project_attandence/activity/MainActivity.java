@@ -501,7 +501,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void getsb(final int postion){
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.137.17:8000/Getschedule";
+        String url = getResources().getString(R.string.url)+"/Getschedule";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {

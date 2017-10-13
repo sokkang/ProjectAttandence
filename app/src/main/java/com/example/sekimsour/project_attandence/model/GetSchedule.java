@@ -12,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.sekimsour.project_attandence.R;
 import com.example.sekimsour.project_attandence.activity.Fragment_Schedule;
 import com.example.sekimsour.project_attandence.activity.MainActivity;
 import com.google.gson.Gson;
@@ -46,7 +47,7 @@ public class GetSchedule {
 
     public  Map<Integer,Fragment_Schedule> getsb(final int postion){
         RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
-        String url = "http://192.168.137.17:8000/Getschedule";
+        String url = context.getResources().getString(R.string.url)+"/Getschedule";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {

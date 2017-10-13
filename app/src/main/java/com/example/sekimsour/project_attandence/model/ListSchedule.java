@@ -55,6 +55,7 @@ public class ListSchedule {
                     int timeStart = 0,timeEnd=0;
                     daily = new Session();
 
+
                     try {
                         if(numtime<table.getSchedule().get(i).getDaily_schedule().size()){
                         calCurrentday.setTime(formatCurrentday.parse(currentday.getTime_start()));
