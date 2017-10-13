@@ -3,6 +3,7 @@ package com.example.sekimsour.project_attandence.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 
 import com.example.sekimsour.project_attandence.activity.Fragment_Schedule;
 
@@ -26,7 +27,9 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
         @Override
         public Fragment getItem(int pos) {
-
+            Log.d("pos1111", "getItem: "+pos);
+            if (listfragm.get(pos)==null){return new Fragment_Schedule();
+            }
             return listfragm.get(pos);
         }
 

@@ -36,27 +36,6 @@ public class TimeTable {
     }
 }
 
-class schedule{
-    private String date;
-    private ArrayList<daily_schedule> daily_schedules;
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public ArrayList<daily_schedule> getDaily_schedules() {
-        return daily_schedules;
-    }
-
-    public void setDaily_schedules(ArrayList<daily_schedule> daily_schedules) {
-        this.daily_schedules = daily_schedules;
-    }
-}
-
 class daily_schedule{
     private int status;
     private String time_start;

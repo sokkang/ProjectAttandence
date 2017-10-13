@@ -34,6 +34,9 @@ public class Fragment_Schedule extends Fragment {
         this.list = list;
     }
 
+    public Fragment_Schedule() {
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

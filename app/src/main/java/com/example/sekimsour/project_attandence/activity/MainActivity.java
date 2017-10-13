@@ -1,10 +1,12 @@
 package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -21,20 +23,41 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.sekimsour.project_attandence.adapter.MyAdapter;
 import com.example.sekimsour.project_attandence.R;
 import com.example.sekimsour.project_attandence.adapter.MyPagerAdapter;
+import com.example.sekimsour.project_attandence.model.GetSchedule;
+import com.example.sekimsour.project_attandence.model.ListSchedule;
+import com.example.sekimsour.project_attandence.model.LoginResponse;
 import com.example.sekimsour.project_attandence.model.Session;
 import com.example.sekimsour.project_attandence.model.TimeTable;
+import com.example.sekimsour.project_attandence.model.schedule;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    static {
+        Calendar calendar = Calendar.getInstance();
+
+
+    }
+
 
     LinearLayout item1;
     LinearLayout item2;
@@ -62,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     List<Fragment_Schedule> listFragment = new ArrayList<>();
     Map<Integer,Fragment_Schedule> listfragm = new HashMap<Integer,Fragment_Schedule>();
     static int p=50;
+    MyPagerAdapter pageAdapter;
+    ViewPager pager;
 
 
     @Override
@@ -175,30 +200,105 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         time8.setHeight((screenHeight-actionBarHeight-result)/9);
 
 
-        for(int k=0;k<5;k++){
-            list.clear();
-            int num=0;
-            for(int i=0;i<9;i++){
-                for(int j=0;j<6;j++){
-                    if (num<6){
-                        list.add(new Session( j+"a"+k,i+"Day"));
-                    }
-                    else {
-                        list.add(new Session( j+"Sub"+k,i+"room"));
-                    }
+//        for(int k=0;k<5;k++){
+//            list.clear();
+//            int num=0;
+//            for(int i=0;i<9;i++){
+//                for(int j=0;j<6;j++){
+//                    if (num<6){
+//                        list.add(new Session( j+"a"+k,i+"Day"));
+//                    }
+//                    else {
+//                        list.add(new Session( j+"Sub"+k,i+"room"));
+//                    }
+//
+//                }
+//            }
+//            // listFragment.add(new Fragment_Schedule(list));
+//            listfragm.put(48+k,new Fragment_Schedule(list));
+//
+//
+//        }
+//        for(int i=0 ;i<3;i++){
+//            RequestQueue queue = Volley.newRequestQueue(this);
+//            String url = "http://192.168.1.108:8000/Getschedule";
+//
+//            final int finalI = i;
+//            StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+//                    new Response.Listener<String>() {
+//                        @Override
+//                        public void onResponse(String response) {
+//                            Gson gson =new Gson();
+//                            TimeTable table = new TimeTable();
+//                            try {
+//                                table = gson.fromJson(response,TimeTable.class);
+//
+//                            } catch (JsonSyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                            if(!table.getMessage().isEmpty()){
+//                                ArrayList<schedule> a = table.getSchedule();
+//                                ListSchedule nn = new ListSchedule(table);
+//                                nn.getScheduleWeekly();
+//
+//
+//                                listfragm.put(49+ finalI,new Fragment_Schedule(nn.getScheduleWeekly()));
+//                                pageAdapter.notifyDataSetChanged();
+//
+//                                Log.d("11111", a.size()+"onResponse: "+response);
+//                                Log.d("e33", listfragm.size()+"onResponse: "+nn.getScheduleWeekly().size());
+//                            }
+//
+//
+//
+//
+//                        }
+//                    }, new Response.ErrorListener() {
+//                @Override
+//                public void onErrorResponse(VolleyError error) {
+//                    Toast.makeText(getApplicationContext(),"a:"+error.getMessage(),Toast.LENGTH_LONG).show();
+//
+//
+//                }
+//            }){
+//
+//                @Override
+//                public Map<String, String> getHeaders() throws AuthFailureError {
+//                    SharedPreferences sharedPreferences = getSharedPreferences("userinfo", MODE_PRIVATE);
+//                    HashMap<String,String> hashMap = new HashMap<>();
+//                    hashMap.put("Accept","application/json");
+//                    hashMap.put("Authorization",sharedPreferences.getString("token",""));
+//
+//                    return hashMap;
+//                }
+//
+//            };
+//            queue.add(stringRequest);
+//        }
 
-                }
-            }
-            // listFragment.add(new Fragment_Schedule(list));
-            listfragm.put(48+k,new Fragment_Schedule(list));
-
-
-        }
+//        getsb(49);
+//        getsb(50);
+//        getsb(51);
+//        getsb(52);
+//        getsb(53);
+//        getsb(54);
+        listfragm=Log_In.scheduleList;
+        Log.d("str", "onCreate: "+listfragm.size());
+//        GetSchedule getSchedule = new GetSchedule(getApplication());
+//        listfragm=getSchedule.getListfragm();
         final FragmentManager fragmentManager = getSupportFragmentManager();
-        final MyPagerAdapter pageAdapter = new MyPagerAdapter(fragmentManager,listfragm);
-        final ViewPager pager = (ViewPager) findViewById(R.id.vp_schedule);
+        pageAdapter = new MyPagerAdapter(fragmentManager,listfragm);
+        pager = (ViewPager) findViewById(R.id.vp_schedule);
         pager.setAdapter(pageAdapter);
-        pager.setCurrentItem(51);
+        pager.setCurrentItem(50);
+        pageAdapter.notifyDataSetChanged();
+
+        Log.d("00000", "onCreate: "+listfragm.size()+"   ,"+listfragm.containsKey(51));
+
+        pageAdapter.notifyDataSetChanged();
+
+
+
 
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -233,55 +333,59 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
 
                 }else if (position<p){
-                    for(int k=0;k<1;k++){
-                        list.clear();
-                        int num=0;
-                        for(int i=0;i<9;i++){
-                            for(int j=0;j<6;j++){
-                                if (num<6){
-                                    list.add(new Session( j+""+position,i+"Day"));
-                                }
-                                else {
-                                    list.add(new Session( j+"Sub",i+"room"));
-                                }
+//                    for(int k=0;k<1;k++){
+//                        list.clear();
+//                        int num=0;
+//                        for(int i=0;i<9;i++){
+//                            for(int j=0;j<6;j++){
+//                                if (num<6){
+//                                    list.add(new Session( j+""+position,i+"Day"));
+//                                }
+//                                else {
+//                                    list.add(new Session( j+"Sub",i+"room"));
+//                                }
+//
+//                            }
+//                        }
+//                        p=position;
+////                        listFragment.add(position-1,new Fragment_Schedule(list));
+////                        pageAdapter.notifyDataSetChanged();
+////                        pager.setCurrentItem(1);
+//                        listfragm.put(position-1,new Fragment_Schedule(list));
 
-                            }
-                        }
-                        p=position;
-//                        listFragment.add(position-1,new Fragment_Schedule(list));
-//                        pageAdapter.notifyDataSetChanged();
-//                        pager.setCurrentItem(1);
-                        listfragm.put(position-1,new Fragment_Schedule(list));
 
-
-                    }
+//                    }
+                    getsb(position-1);
                     listfragm.remove(position+2);
+                    pageAdapter.notifyDataSetChanged();
 
                 }else if (position>p){
-                    for(int k=0;k<1;k++){
-                        list.clear();
-                        int num=0;
-                        for(int i=0;i<9;i++){
-                            for(int j=0;j<6;j++){
-                                if (num<6){
-                                    list.add(new Session( j+""+position,i+"Day"));
-                                }
-                                else {
-                                    list.add(new Session( j+"Sub",i+"room"));
-                                }
+//                    for(int k=0;k<1;k++){
+//                        list.clear();
+//                        int num=0;
+//                        for(int i=0;i<9;i++){
+//                            for(int j=0;j<6;j++){
+//                                if (num<6){
+//                                    list.add(new Session( j+""+position,i+"Day"));
+//                                }
+//                                else {
+//                                    list.add(new Session( j+"Sub",i+"room"));
+//                                }
+//
+//                            }
+//                        }
+//                        p=position;
+////                        listFragment.add(position+1,new Fragment_Schedule(list));
+////                        pageAdapter.notifyDataSetChanged();
+////                        pager.setCurrentItem(1);
+//                        listfragm.put(position+1,new Fragment_Schedule(list));
 
-                            }
-                        }
-                        p=position;
-//                        listFragment.add(position+1,new Fragment_Schedule(list));
-//                        pageAdapter.notifyDataSetChanged();
-//                        pager.setCurrentItem(1);
-                        listfragm.put(position+1,new Fragment_Schedule(list));
-                        listfragm.remove(position-2);
+                    getsb(position+1);
+                    listfragm.remove(position-2);
 
 
 
-                    }
+//                    }
                 }
 
 
@@ -394,4 +498,61 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             itemSelect5.setBackgroundColor(getResources().getColor(R.color.colorWasSelect));
         }
     }
+
+    public void getsb(final int postion){
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://192.168.137.17:8000/Getschedule";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson =new Gson();
+                        TimeTable table = new TimeTable();
+                        try {
+                            table = gson.fromJson(response,TimeTable.class);
+
+                        } catch (JsonSyntaxException e) {
+                            e.printStackTrace();
+                        }
+                        if(!table.getMessage().isEmpty()){
+                            ArrayList<schedule> a = table.getSchedule();
+                            ListSchedule nn = new ListSchedule(table);
+                                nn.getScheduleWeekly();
+
+
+                            listfragm.put(postion,new Fragment_Schedule(nn.getScheduleWeekly()));
+                            pageAdapter.notifyDataSetChanged();
+
+                            Log.d("11111", a.size()+"onResponse: "+response);
+                            Log.d("e33", listfragm.size()+"onResponse: "+nn.getScheduleWeekly().size());
+                        }
+
+
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),"a:"+error.getMessage(),Toast.LENGTH_LONG).show();
+
+
+            }
+        }){
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                SharedPreferences sharedPreferences = getSharedPreferences("userinfo", MODE_PRIVATE);
+                HashMap<String,String> hashMap = new HashMap<>();
+                hashMap.put("Accept","application/json");
+                hashMap.put("Authorization",sharedPreferences.getString("token",""));
+
+                return hashMap;
+            }
+
+        };
+        queue.add(stringRequest);
+    }
+
 }
