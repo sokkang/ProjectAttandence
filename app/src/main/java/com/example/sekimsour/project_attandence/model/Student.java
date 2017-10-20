@@ -6,7 +6,7 @@ package com.example.sekimsour.project_attandence.model;
 
 public class Student {
     private String name;
-    private int img;
+    private String img;
     private String id;
     private int status;
 
@@ -26,11 +26,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
     }
 

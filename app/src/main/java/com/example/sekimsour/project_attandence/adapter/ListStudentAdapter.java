@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +29,8 @@ public class ListStudentAdapter extends BaseAdapter{
     List<Student> list;
     Context context;
     int colnum;
+    private String nameuser;
+    private String iduser;
 
     public ListStudentAdapter(List<Student> list, Context context,int colnum) {
         this.list = list;
@@ -119,14 +122,20 @@ public class ListStudentAdapter extends BaseAdapter{
             public void onClick(View view) {
 
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
-                View mView = LayoutInflater.from(context).inflate(R.layout.view_profile, null);
+                View mView = LayoutInflater.from(context).inflate(R.layout.student_detail, null);
 
-                final CircleImageView profile= (CircleImageView) mView.findViewById(R.id.profile_in_alert);
-                final TextView name= (TextView) mView.findViewById(R.id.name_in_alert);
-                name.setText("name"+i);
-                final TextView id = (TextView) mView.findViewById(R.id.id_in_alert);
-                final ImageView back= (ImageView) mView.findViewById(R.id.back_in_alert);
-                final TextView change_password = (TextView) mView.findViewById(R.id.change_password_in_alert);
+                final CircleImageView profile= (CircleImageView) mView.findViewById(R.id.detail_in_alert);
+                final TextView name= (TextView) mView.findViewById(R.id.name_in_alert1);
+                for(int j=0; j<list.size(); j++){
+                    if(i==j){
+                        nameuser = list.get(i).getName();
+                        iduser = list.get(i).getId();
+                    }
+                }
+                name.setText(nameuser);
+                final TextView id = (TextView) mView.findViewById(R.id.id_in_alert1);
+                id.setText(iduser);
+                final ImageView back= (ImageView) mView.findViewById(R.id.back_in_alert1);
 
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
