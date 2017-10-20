@@ -43,7 +43,8 @@
             android:hint="Password"
             android:paddingLeft="10dp"
             android:textColorHint="@color/colorhint"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:inputType="textPassword"/>
         <Button
             android:id="@+id/btnLogIn"
             android:layout_below="@+id/password"

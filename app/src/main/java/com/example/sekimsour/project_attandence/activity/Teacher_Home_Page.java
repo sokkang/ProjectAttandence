@@ -136,11 +136,11 @@ public class Teacher_Home_Page extends AppCompatActivity {
                                     Students students = new Students();
                                     Student student = new Student();
 
-                                    student.setStatus(j%3+1);
+//                                    student.setStatus(j%3+1);
+                                    student.setStatus(group.getStudent_list().get(j).getStatus());
                                     student.setId(group.getStudent_list().get(j).getStudent_id());
                                     student.setName(group.getStudent_list().get(j).getFirst_name()+" "+group.getStudent_list().get(j).getLast_name());
                                     student.setImg(group.getStudent_list().get(j).getPhoto());
-                                    Toast.makeText(Teacher_Home_Page.this, student.getImg(), Toast.LENGTH_LONG).show();
                                     list.add(student);
                                 }
                                 adapter.notifyDataSetChanged();
