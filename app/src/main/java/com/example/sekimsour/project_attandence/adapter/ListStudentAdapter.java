@@ -165,5 +165,4 @@ public class ListStudentAdapter extends BaseAdapter{
 
         return view;
     }
-
 }

@@ -92,6 +92,7 @@ public class Teacher_Home_Page extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.Gv_student);
         adapter = new ListStudentAdapter(list,this,1);
         gridView.setAdapter(adapter);
+        count_student();
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -109,10 +110,23 @@ public class Teacher_Home_Page extends AppCompatActivity {
                         list.get(i).setStatus(1);
                         break;
                 }
+                count_student();
                 adapter.notifyDataSetChanged();
 
             }
         });
+    }
+
+    public void count_student(){
+        int total_student = list.size();
+        int student_pre=0;
+        for(int i=0 ; i<total_student ; i++){
+            if(list.get(i).getStatus()==2 || list.get(i).getStatus()==3){
+                student_pre ++;
+            }
+        }
+        TextView total = (TextView)findViewById(R.id.show_all_students);
+        total.setText("Student : "+student_pre+"/"+total_student);
     }
 
     public void GetStudentList(){
@@ -145,6 +159,7 @@ public class Teacher_Home_Page extends AppCompatActivity {
                                     student.setImg(group.getStudent_list().get(j).getPhoto());
                                     list.add(student);
                                 }
+                                count_student();
                                 adapter.notifyDataSetChanged();
                             }
                         }
@@ -168,12 +183,7 @@ public class Teacher_Home_Page extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
-//
-//    public void count_student(){
-//        TextView total_student = (TextView) findViewById(R.id.)
-//        int i=0;
-//        for ()
-//    }
+
 
     public void doBack(View view) {
         Intent intent = new Intent(Teacher_Home_Page.this, MainActivity.class);
