@@ -193,6 +193,7 @@ public class Teacher_Home_Page extends AppCompatActivity {
     }
 
     public void changeGrid(View view) {
+
         int a=gridView.getFirstVisiblePosition();
         if(gridView.getNumColumns()>1){
             Log.d("11111", "changeView: "+a);
