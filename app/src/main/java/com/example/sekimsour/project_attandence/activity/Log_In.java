@@ -50,8 +50,6 @@ public class Log_In extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                login();
-
-
             }
         });
     }
@@ -87,16 +85,11 @@ public class Log_In extends AppCompatActivity {
                             Log.d("log", "onResponse: "+scheduleList.size());
 
                         }
-
-
-
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),"a:"+error.getMessage(),Toast.LENGTH_LONG).show();
-
-
             }
         }){
             @Override
@@ -145,10 +138,6 @@ public class Log_In extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }
-
-
-
-
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -172,6 +161,4 @@ public class Log_In extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
-
-
 }

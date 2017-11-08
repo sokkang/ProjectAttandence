@@ -3,7 +3,10 @@ package com.example.sekimsour.project_attandence.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.TextView;
 
 import com.example.sekimsour.project_attandence.R;
 

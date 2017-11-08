@@ -2,6 +2,7 @@ package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //menu
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        setColorToMenu(R.id.menu1);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -426,6 +428,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     public void doSelectItem4(View view) {
         setColorToMenu(R.id.menu4);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.facebook.com/itckh/"));
+        startActivity(intent);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
