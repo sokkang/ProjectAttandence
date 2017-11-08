@@ -10,5 +10,5 @@
     <string name="school_name">Institute ofTechnology of Cambodia</string>
 
     <string name="log_out">Are you sure you want to log out?</string>
-    <string name="url">http://172.20.10.2:8000</string>
+    <string name="url">http://192.168.43.126:8000</string>
     </resources>
