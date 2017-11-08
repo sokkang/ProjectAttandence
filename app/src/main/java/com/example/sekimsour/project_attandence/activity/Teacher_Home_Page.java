@@ -95,6 +95,9 @@ public class Teacher_Home_Page extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //1 ab
+                //2 pre
+                //3 late
                 switch (list.get(i).getStatus()) {
                     case 1:
                         list.get(i).setStatus(2);
@@ -135,8 +138,7 @@ public class Teacher_Home_Page extends AppCompatActivity {
                                 for(int j=0 ; j<group.getStudent_list().size(); j++){
                                     Students students = new Students();
                                     Student student = new Student();
-
-//                                    student.setStatus(j%3+1);
+//                                  student.setStatus(j%3+1);
                                     student.setStatus(group.getStudent_list().get(j).getStatus());
                                     student.setId(group.getStudent_list().get(j).getStudent_id());
                                     student.setName(group.getStudent_list().get(j).getFirst_name()+" "+group.getStudent_list().get(j).getLast_name());
@@ -166,6 +168,12 @@ public class Teacher_Home_Page extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
+//
+//    public void count_student(){
+//        TextView total_student = (TextView) findViewById(R.id.)
+//        int i=0;
+//        for ()
+//    }
 
     public void doBack(View view) {
         Intent intent = new Intent(Teacher_Home_Page.this, MainActivity.class);

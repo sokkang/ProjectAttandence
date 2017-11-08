@@ -3,6 +3,7 @@ package com.example.sekimsour.project_attandence.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -55,9 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static {
         Calendar calendar = Calendar.getInstance();
 
-
     }
-
 
     LinearLayout item1;
     LinearLayout item2;
@@ -129,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ViewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.view_profile, null);
 

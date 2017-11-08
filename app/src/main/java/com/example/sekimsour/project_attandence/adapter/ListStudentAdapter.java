@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.sekimsour.project_attandence.model.Student;
 import com.example.sekimsour.project_attandence.R;
 
@@ -74,6 +75,7 @@ public class ListStudentAdapter extends BaseAdapter{
 
         Student s =list.get(i);
         ImageView imageView = view.findViewById(R.id.iv_pro);
+        Glide.with(context).load(s.getImg()).into(imageView);
         ImageView imgInfo = view.findViewById(R.id.imageView2);
         TextView tvname = view.findViewById(R.id.tv_name);
         tvname.setText(s.getName());
@@ -98,6 +100,8 @@ public class ListStudentAdapter extends BaseAdapter{
             float factor = screenWidth / (float) bMap.getHeight();
             Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, (int) (bMap.getWidth()*factor), screenWidth, true);
             imageView.setImageBitmap(bMapScaled);
+            Glide.with(context).load(s.getImg()).into(imageView);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imgInfo.setMinimumHeight((int) view.getContext().getResources().getDimension(R.dimen.img_info));
             imgInfo.setMinimumWidth((int) view.getContext().getResources().getDimension(R.dimen.img_info));
             tvname.setTextSize( 25);
@@ -105,11 +109,14 @@ public class ListStudentAdapter extends BaseAdapter{
             view.setMinimumHeight((int) (screenWidth/3));
             imageView.setMinimumHeight((screenWidth/3));
             Bitmap bMap = BitmapFactory.decodeResource(context.getResources(),R.drawable.employee);
+
             float factor = (screenWidth/3) / (float) bMap.getHeight();
 
             Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, (int) (bMap.getWidth()*factor), screenWidth/3, true);
             imageView.setImageBitmap(bMapScaled);
-//            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            Glide.with(context).load(s.getImg()).into(imageView);
+
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imgInfo.setMinimumHeight((int) view.getContext().getResources().getDimension(R.dimen.img_info_s));
             imgInfo.setMinimumWidth((int) view.getContext().getResources().getDimension(R.dimen.img_info_s));
             tvname.setTextSize( 15);
@@ -122,20 +129,25 @@ public class ListStudentAdapter extends BaseAdapter{
             public void onClick(View view) {
 
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
-                View mView = LayoutInflater.from(context).inflate(R.layout.student_detail, null);
+                View mView = LayoutInflater.from(context).inflate(R.layout.view_profile, null);
 
-                final CircleImageView profile= (CircleImageView) mView.findViewById(R.id.detail_in_alert);
-                final TextView name= (TextView) mView.findViewById(R.id.name_in_alert1);
+                final CircleImageView profile= (CircleImageView) mView.findViewById(R.id.profile_in_alert);
+                final TextView name= (TextView) mView.findViewById(R.id.name_in_alert);
+                final TextView change = (TextView) mView.findViewById(R.id.change_password_in_alert);
+                change.setText(" ");
+                String url_profile="";
                 for(int j=0; j<list.size(); j++){
                     if(i==j){
+                        url_profile = list.get(i).getImg();
                         nameuser = list.get(i).getName();
                         iduser = list.get(i).getId();
                     }
                 }
                 name.setText(nameuser);
-                final TextView id = (TextView) mView.findViewById(R.id.id_in_alert1);
+                Glide.with(context).load(url_profile).into(profile);
+                final TextView id = (TextView) mView.findViewById(R.id.id_in_alert);
                 id.setText(iduser);
-                final ImageView back= (ImageView) mView.findViewById(R.id.back_in_alert1);
+                final ImageView back= (ImageView) mView.findViewById(R.id.back_in_alert);
 
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
