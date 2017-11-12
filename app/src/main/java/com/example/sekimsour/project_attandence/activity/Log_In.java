@@ -79,6 +79,7 @@ public class Log_In extends AppCompatActivity {
                             editor.putBoolean("login", true);
                             editor.putString("name", tvUsername.getText().toString());
                             editor.putString("pwd", tvpwd.getText().toString());
+                            editor.putString("today", "12");
                             editor.putInt("role",tvUsername.getText().toString().contains("teacher")? 1:2);
                             editor.putString("token",loginResponse.getToken());
 
