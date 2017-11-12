@@ -37,10 +37,12 @@ public class Log_In extends AppCompatActivity {
     Button login;
     TextView tvUsername,tvpwd;
     static Map<Integer,Fragment_Schedule> scheduleList = new HashMap<>();
+    int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
         tvUsername = (TextView) findViewById(R.id.username);
         tvUsername.setText("abc@123.com");
         tvpwd = (TextView) findViewById(R.id.password);
@@ -49,7 +51,9 @@ public class Log_In extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               login();
+                count++;
+                if(count==1){
+               login();}
             }
         });
     }
@@ -124,7 +128,7 @@ public class Log_In extends AppCompatActivity {
                         } catch (JsonSyntaxException e) {
                             e.printStackTrace();
                         }
-                        if(!table.getMessage().isEmpty()){
+//                        if(!table.getMessage().isEmpty()){
                             ArrayList<schedule> a = table.getSchedule();
                             ListSchedule nn = new ListSchedule(table);
                             nn.getScheduleWeekly();
@@ -135,9 +139,11 @@ public class Log_In extends AppCompatActivity {
                             Log.d("log 11111", scheduleList.size()+"onResponse: "+response);
                             if (postion==51){
                                 Intent intent = new Intent(Log_In.this, MainActivity.class);
+                                finish();
                                 startActivity(intent);
+                                count=0;
                             }
-                        }
+//                        }
                     }
                 }, new Response.ErrorListener() {
             @Override

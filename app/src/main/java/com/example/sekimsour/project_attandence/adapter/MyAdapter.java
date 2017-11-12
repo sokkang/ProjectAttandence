@@ -86,17 +86,6 @@ public class MyAdapter extends BaseAdapter{
             num.setText(s.getSub());
             TextView day = view.findViewById(R.id.tv_day);
             day.setText(s.getRoom());
-//        }
-//        else if((i)%7==0){
-//            if(view==null){
-//                view = LayoutInflater.from(context).inflate(R.layout.adapter_time,null);
-//                int screenHeight = ((Activity) context).getWindowManager()
-//                        .getDefaultDisplay().getHeight();
-//
-//                view.setMinimumHeight(screenHeight/10);
-//            }
-//            TextView num = view.findViewById(R.id.tv_time);
-//            num.setText(s.getSub());
         }else {
             if (view == null) {
                 view = LayoutInflater.from(context).inflate(R.layout.adapter, null);
@@ -106,10 +95,38 @@ public class MyAdapter extends BaseAdapter{
                 view.setMinimumHeight((screenHeight-actionBarHeight-result)/9);
 
                 if(i%6==5){
-                    view.setBackgroundResource(R.drawable.s_bg_table_end);
+                    switch (s.getStatus()){
+                        case 0:
+                            view.setBackgroundResource(R.drawable.s_bg_table_end);
+                            break;
+                        case 1:
+                            view.setBackgroundResource(R.drawable.s_bg_table_end_as);
+                            break;
+                        case 2:
+                            view.setBackgroundResource(R.drawable.s_bg_table_end_pr);
+                            break;
+                        case 3:
+                            view.setBackgroundResource(R.drawable.s_bg_table_end_la);
+                            break;
+                    }
                 }
 
             }
+              switch (s.getStatus()){
+                  case 0:
+                      view.setBackgroundResource(R.drawable.s_bg_table);
+                      break;
+                  case 1:
+                      view.setBackgroundResource(R.drawable.s_bg_table_click_ab);
+                      break;
+                  case 2:
+                      view.setBackgroundResource(R.drawable.s_bg_table_click_pr);
+                      break;
+                  case 3:
+                      view.setBackgroundResource(R.drawable.s_bg_table_click_la);
+                      break;
+              }
+
 
             TextView num = view.findViewById(R.id.tv_sub);
             num.setText(s.getSub());

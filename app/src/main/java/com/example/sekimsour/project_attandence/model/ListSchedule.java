@@ -71,6 +71,7 @@ public class ListSchedule {
                           daily = new Session();
                           daily.setSub(currentday.getSubject_name());
                           daily.setRoom(currentday.getRoom());
+                          daily.setStatus(currentday.getStatus());
 //                          listSchedule.add(((j+1+k)*7)+i, daily);
                           listSchedule[((j+1)*6)+i]=daily;
                           if(k!=timeEnd-timeStart-1)
@@ -81,6 +82,7 @@ public class ListSchedule {
                         daily = new Session();
                         daily.setSub("");
                         daily.setRoom("");
+                        daily.setStatus(0);
 //                        listSchedule.add(((j+1)*7)+i,daily);
                         listSchedule[((j+1)*6)+i]=daily;
                     }

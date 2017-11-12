@@ -109,12 +109,11 @@ public class ListStudentAdapter extends BaseAdapter{
             view.setMinimumHeight((int) (screenWidth/3));
             imageView.setMinimumHeight((screenWidth/3));
             Bitmap bMap = BitmapFactory.decodeResource(context.getResources(),R.drawable.employee);
-
+            Glide.with(context).load(s.getImg()).into(imageView);
             float factor = (screenWidth/3) / (float) bMap.getHeight();
 
             Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, (int) (bMap.getWidth()*factor), screenWidth/3, true);
             imageView.setImageBitmap(bMapScaled);
-            Glide.with(context).load(s.getImg()).into(imageView);
 
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imgInfo.setMinimumHeight((int) view.getContext().getResources().getDimension(R.dimen.img_info_s));

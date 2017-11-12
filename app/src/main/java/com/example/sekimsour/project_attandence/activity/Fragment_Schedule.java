@@ -1,6 +1,7 @@
 package com.example.sekimsour.project_attandence.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,13 +12,14 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.sekimsour.project_attandence.R;
-import com.example.sekimsour.project_attandence.activity.Teacher_Home_Page;
 import com.example.sekimsour.project_attandence.adapter.MyAdapter;
 import com.example.sekimsour.project_attandence.model.Session;
 import com.example.sekimsour.project_attandence.model.TimeTable;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -45,7 +47,7 @@ public class Fragment_Schedule extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, final Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_schedule, container, false);
         final GridView gridView = (GridView)v.findViewById(R.id.Gv_list);
         adapter = new MyAdapter(getActivity(),list);
@@ -53,12 +55,19 @@ public class Fragment_Schedule extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                view.setBackgroundResource(R.drawable.s_bg_table_click);
-                Intent intent = new Intent(getContext(),Teacher_Home_Page.class);
-                getContext().startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.change_activity, R.anim.change_activity);
-                getActivity().finish();
-
+//               View view1 = LayoutInflater.from(getContext()).inflate(R.layout.adapter_header,null);
+//                TextView num = view1.findViewById(R.id.tv_sub);
+                if(i>5&&!list.get(i).getRoom().toString().equals("")) {
+                    list.get(i).setStatus(2);
+                    adapter.notifyDataSetChanged();
+                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences("userinfo", MODE_PRIVATE);
+                    if(sharedPreferences.getInt("role",2)==1) {
+                        Intent intent = new Intent(getContext(), Teacher_Home_Page.class);
+                        getContext().startActivity(intent);
+                        getActivity().overridePendingTransition(R.anim.change_activity, R.anim.change_activity);
+//                        getActivity().finish();
+                    }
+                }
 
             }
         });

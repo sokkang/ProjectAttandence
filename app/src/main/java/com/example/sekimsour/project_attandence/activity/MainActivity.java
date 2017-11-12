@@ -527,13 +527,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                             listfragm.put(postion,new Fragment_Schedule(nn.getScheduleWeekly()));
                             pageAdapter.notifyDataSetChanged();
-
-                            Log.d("11111", a.size()+"onResponse: "+response);
-                            Log.d("e33", listfragm.size()+"onResponse: "+nn.getScheduleWeekly().size());
                         }
-
-
-
 
                     }
                 }, new Response.ErrorListener() {

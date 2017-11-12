@@ -47,6 +47,6 @@ public class Session{
         this.room = room;
     }
     public String toString(){
-        return room+sub;
+        return room+sub+status;
     }
 }
